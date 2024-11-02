@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Divisi</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="d-flex">
+  <!-- Sidebar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary flex-column" style="min-width: 250px;">
+    <a class="navbar-brand" href="#">My Dashboard</a>
+    <ul class="navbar-nav flex-column w-100">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="karyawan.html"><i class="fas fa-users"></i> Karyawan</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-calendar-check"></i> Absensi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-money-check-alt"></i> Pengajian</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1 p-4">
+    <!-- Bagian Atas - Background Primary -->
+    <div class="bg-primary text-white p-4 mb-4">
+      <h1>Data Divisi</h1>
+    </div>
+
+    <!-- Bagian Bawah - Background White -->
+    <div class="p-4 bg-light">
+      <!-- Search Bar -->
+      <div class="mb-3">
+        <input type="text" class="form-control" id="search" placeholder="Cari Divisi...">
+      </div>
+
+      <!-- Dropdown untuk memilih jumlah data per halaman -->
+      <div class="mb-3">
+        <label for="rowsPerPage">Tampilkan:</label>
+        <select class="form-control w-25" id="rowsPerPage">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="200">200</option>
+        </select>
+      </div>
+
+      <!-- Tabel Divisi -->
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>No</th>
+            <th>Kode Divisi</th>
+            <th>Nama Divisi</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Contoh Data Divisi -->
+          <tr>
+            <td>1</td>
+            <td>DIV001</td>
+            <td>HRD</td>
+            <td>
+              <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+              <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>DIV002</td>
+            <td>Keuangan</td>
+            <td>
+              <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+              <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
+            </td>
+          </tr>
+          <!-- Tambahkan lebih banyak baris sesuai kebutuhan -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  // Fungsi untuk menangani pencarian
+  document.getElementById('search').addEventListener('input', function() {
+    let searchValue = this.value.toLowerCase();
+    let rows = document.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+      let cell = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+      row.style.display = cell.includes(searchValue) ? '' : 'none';
+    });
+  });
+
+  // Fungsi untuk mengubah jumlah baris per halaman
+  document.getElementById('rowsPerPage').addEventListener('change', function() {
+    // Implementasi logika untuk mengubah jumlah baris yang ditampilkan
+    alert(`Menampilkan ${this.value} data per halaman.`);
+  });
+</script>
+</body>
+</html>

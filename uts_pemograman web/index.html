@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="d-flex">
+  <!-- Sidebar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white flex-column" style="min-width: 250px;">
+    <a class="navbar-brand" href="#">My Dashboard</a>
+    <ul class="navbar-nav flex-column w-100">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#menuKaryawan"><i class="fas fa-users"></i> Menu Karyawan</a>
+        <div id="menuKaryawan" class="collapse">
+          <a class="nav-link pl-4" href="menu karyawan/karyawan.html"><i class="fas fa-user"></i> Karyawan</a>
+          <a class="nav-link pl-4" href="menu karyawan/jabatan.html"><i class="fas fa-id-badge"></i> Jabatan</a>
+          <a class="nav-link pl-4" href="menu karyawan/divisi.htmln"><i class="fas fa-sitemap"></i> Divisi</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#menuAbsensi"><i class="fas fa-calendar-check"></i> Menu Absensi</a>
+        <div id="menuAbsensi" class="collapse">
+          <a class="nav-link pl-4" href="menu absen/absensi.html"><i class="fas fa-clock"></i> Absensi</a>
+          <a class="nav-link pl-4" href="menu absen/izin.html"><i class="fas fa-calendar-times"></i> Izin</a>
+          <a class="nav-link pl-4" href="menu absen/lembur.html"><i class="fas fa-business-time"></i> Lembur</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#menuPengajian"><i class="fas fa-money-check-alt"></i> Menu Pengajian</a>
+        <div id="menuPengajian" class="collapse">
+          <a class="nav-link pl-4" href="#"><i class="fas fa-file-invoice-dollar"></i> Slip Gaji</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1">
+    <!-- Bagian Atas - Background Primary -->
+    <div class="bg-primary text-white p-4">
+      <h1>Sistem Manajemen Karyawan</h1>
+      <h4>Dashboard</h4>
+    </div>
+
+    <!-- Bagian Bawah - Background White -->
+    <div class="p-4 bg-white">
+      <div class="row">
+        <!-- Data Pegawai -->
+        <div class="col-md-4">
+          <div class="card text-white bg-primary mb-3" style="cursor: pointer;">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-users"></i> Data Pegawai</h5>
+              <p class="card-text">Total Pegawai: 150</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Absen Hari Ini -->
+        <div class="col-md-4">
+          <div class="card text-white bg-success mb-3" style="cursor: pointer;">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-calendar-check"></i> Absen Hari Ini</h5>
+              <p class="card-text">Total Hadir: 120</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lembur -->
+        <div class="col-md-4">
+          <div class="card text-white bg-warning mb-3" style="cursor: pointer;">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-business-time"></i> Lembur</h5>
+              <p class="card-text">Total Lembur: 15</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

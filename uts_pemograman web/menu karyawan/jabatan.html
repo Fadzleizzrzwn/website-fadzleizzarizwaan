@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Jabatan</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="d-flex">
+  <!-- Sidebar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary flex-column" style="min-width: 250px;">
+    <a class="navbar-brand" href="#">My Dashboard</a>
+    <ul class="navbar-nav flex-column w-100">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#menuKaryawan"><i class="fas fa-users"></i> Menu Karyawan</a>
+        <div id="menuKaryawan" class="collapse">
+          <a class="nav-link pl-4" href="karyawan.html"><i class="fas fa-user"></i> Karyawan</a>
+          <a class="nav-link pl-4" href="#"><i class="fas fa-id-badge"></i> Jabatan</a>
+          <a class="nav-link pl-4" href="#"><i class="fas fa-sitemap"></i> Divisi</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#menuAbsensi"><i class="fas fa-calendar-check"></i> Menu Absensi</a>
+        <div id="menuAbsensi" class="collapse">
+          <a class="nav-link pl-4" href="#"><i class="fas fa-clock"></i> Absensi</a>
+          <a class="nav-link pl-4" href="#"><i class="fas fa-calendar-times"></i> Izin</a>
+          <a class="nav-link pl-4" href="#"><i class="fas fa-business-time"></i> Lembur</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#menuPengajian"><i class="fas fa-money-check-alt"></i> Menu Pengajian</a>
+        <div id="menuPengajian" class="collapse">
+          <a class="nav-link pl-4" href="#"><i class="fas fa-file-invoice-dollar"></i> Slip Gaji</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1 p-4">
+    <!-- Bagian Atas - Background Primary -->
+    <div class="bg-primary text-white p-4 mb-4">
+      <h1>Data Jabatan</h1>
+    </div>
+
+    <!-- Bagian Bawah - Background White -->
+    <div class="p-4 bg-white">
+      <!-- Search Bar -->
+      <div class="mb-3">
+        <input type="text" class="form-control" id="search" placeholder="Cari Jabatan...">
+      </div>
+
+      <!-- Dropdown untuk memilih jumlah data per halaman -->
+      <div class="mb-3">
+        <label for="rowsPerPage">Tampilkan:</label>
+        <select class="form-control w-25" id="rowsPerPage">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="200">200</option>
+        </select>
+      </div>
+
+      <!-- Tabel Jabatan -->
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>No</th>
+            <th>Kode Jabatan</th>
+            <th>Jabatan</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data Dummy untuk Tabel -->
+          <tr>
+            <td>1</td>
+            <td>JBT001</td>
+            <td>Manager</td>
+            <td>
+              <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+              <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>JBT002</td>
+            <td>Staf</td>
+            <td>
+              <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button>
+              <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
+            </td>
+          </tr>
+          <!-- Tambahkan lebih banyak baris sesuai kebutuhan -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Karyawan</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="d-flex">
+  <!-- Sidebar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary flex-column" style="min-width: 250px;">
+    <a class="navbar-brand" href="#">My Dashboard</a>
+    <ul class="navbar-nav flex-column w-100">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-users"></i> Karyawan</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-calendar-check"></i> Absensi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fas fa-money-check-alt"></i> Pengajian</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1 p-4 bg-light">
+    <!-- Tombol Kembali -->
+    <button class="btn btn-secondary mb-3" onclick="window.history.back();"><i class="fas fa-arrow-left"></i> Kembali</button>
+
+    <h2>Data Karyawan</h2>
+
+    <!-- Tombol Tambah Data -->
+    <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalKaryawan"><i class="fas fa-plus"></i> Tambah Karyawan</button>
+
+    <!-- Tabel Data Karyawan -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>No</th>
+            <th>Nama Karyawan</th>
+            <th>NIK</th>
+            <th>Email</th>
+            <th>No Telp</th>
+            <th>Alamat</th>
+            <th>Jabatan</th>
+            <th>Divisi</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Contoh Data Karyawan -->
+          <tr>
+            <td>1</td>
+            <td>Asep</td>
+            <td>123456789</td>
+            <td>asep@gmail.com</td>
+            <td>08123456789</td>
+            <td>Jl. Anggrek</td>
+            <td>Manager</td>
+            <td>HRD</td>
+            <td>
+              <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalKaryawan"><i class="fas fa-edit"></i> Edit</button>
+              <button class="btn btn-danger btn-sm" onclick="deleteKaryawan(1);"><i class="fas fa-trash"></i> Hapus</button>
+            </td>
+          </tr>
+          <!-- Tambahkan data karyawan lainnya di sini -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Tambah/Edit Karyawan -->
+<div class="modal fade" id="modalKaryawan" tabindex="-1" aria-labelledby="modalKaryawanLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalKaryawanLabel">Form Karyawan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="formKaryawan">
+          <div class="form-group">
+            <label for="namaKaryawan">Nama Karyawan</label>
+            <input type="text" class="form-control" id="namaKaryawan" required>
+          </div>
+          <div class="form-group">
+            <label for="nik">NIK</label>
+            <input type="text" class="form-control" id="nik" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="noTelp">No Telp</label>
+            <input type="text" class="form-control" id="noTelp" required>
+          </div>
+          <div class="form-group">
+            <label for="alamat">Alamat</label>
+            <textarea class="form-control" id="alamat" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="jabatan">Jabatan</label>
+            <input type="text" class="form-control" id="jabatan" required>
+          </div>
+          <div class="form-group">
+            <label for="divisi">Divisi</label>
+            <input type="text" class="form-control" id="divisi" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  // Fungsi simpan data karyawan
+  document.getElementById('formKaryawan').addEventListener('submit', function(e) {
+    e.preventDefault();
+    $('#modalKaryawan').modal('hide');
+    // Tambahkan kode untuk menyimpan data ke database
+  });
+
+  // Fungsi hapus data karyawan
+  function deleteKaryawan(id) {
+    if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+      // Tambahkan kode untuk menghapus data dari database
+    }
+  }
+</script>
+</body>
+</html>
